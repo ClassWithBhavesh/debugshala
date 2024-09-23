@@ -1,0 +1,104 @@
+/* Carousel.css */
+
+.carousel-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.carousel1 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  /* box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); */
+}
+
+.card_1 {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.card_2 h2{
+  width: 100%;
+  /* height: 20%; */
+  align-content: center;
+  position: relative;
+  left: 0;
+  top: 0;
+  background-color: #000000;
+}
+
+.card_1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card_1 img {
+  transform: scale(1.1);
+}
+
+/* .card_2 {
+  padding: 20px;
+} */
+
+/* .card_2 h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+} */
+
+/* .card_2 p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #666;
+} */
+
+.card_3 {
+  padding: 20px;
+}
+
+.card_btn {
+  padding: 15px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #000000;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #000000;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #000000;
+  font-size: 40px;
+}
+
+.slick-slide{
+    margin-left: 10px;
+}

@@ -1,0 +1,144 @@
+/* RotatingText.css
+  .rotating-text {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    transform: translateX(-80px);
+    position: relative;
+  }
+  
+  .rotating-text p {
+    display: inline-flex;
+    margin: 0;
+    vertical-align: top;
+    position: relative;
+  }
+  
+  .rotating-text p .word {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+  }
+  
+  .rotating-text p .word .letter {
+    display: inline-block;
+    transform-origin: center center 25px;
+  }
+  
+  .rotating-text p .word .letter.out {
+    transform: rotateX(90deg);
+    transition: transform 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+  }
+  
+  .rotating-text p .word .letter.in {
+    transition: transform 0.38s ease;
+    transform: rotateX(0deg);
+  }
+  
+  .rotating-text p .word .letter.behind {
+    transform: rotateX(-90deg);
+  }
+  
+  .w-1 {
+    color: #e74c3c;
+  }
+  
+  .w-2 {
+    color: #8e44ad;
+  }
+  
+  .w-3 {
+    color: #3498db;
+  }
+  
+  .w-4 {
+    color: #2ecc71;
+  }
+  
+  .w-5 {
+    color: #f1c40f;
+  }
+   */
+
+
+
+
+
+
+/* RotatingText.css */
+
+.rotating-text {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    transform: translateX(-80px);
+    position: relative;
+    top: 50%;
+    left: -95%;
+  }
+  
+  .rotating-text p {
+    display: inline-flex;
+    margin: 0;
+    vertical-align: top;
+  }
+  
+  .word-container {
+    position: relative; /* Changed from absolute to relative for better stacking */
+    display: flex;
+  }
+  
+  .rotating-text p .word {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+  }
+  
+  .rotating-text p .word .letter {
+    display: inline-block; /* Ensure letters are inline-block for transformations */
+    transform-origin: center center 25px;
+  }
+  
+  .rotating-text p .word .letter.out {
+    transform: rotateX(90deg);
+    transition: transform 0.32s cubic-bezier(0.6, 0, 0.7, 0.2), opacity 0.32s ease;
+    opacity: 0; /* Ensure the letter becomes invisible after rotation */
+  }
+  
+  .rotating-text p .word .letter.in {
+    transform: rotateX(0deg);
+    transition: transform 0.38s ease, opacity 0.38s ease;
+    opacity: 1; /* Make the letter visible */
+  }
+  
+  .rotating-text p .word .letter.behind {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  
+  /* .w-1 {
+    color: #e74c3c;
+  }
+  
+  .w-2 {
+    color: #8e44ad;
+  }
+  
+  .w-3 {
+    color: #3498db;
+  }
+  
+  .w-4 {
+    color: #2ecc71;
+  }
+  
+  .w-5 {
+    color: #f1c40f;
+  } */
+
+  .word{
+    color: #3498db;
+  }
+  
