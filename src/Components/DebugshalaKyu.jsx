@@ -22,7 +22,15 @@ function DebugshalaKyu() {
     </div>
     <div className="container mentor-container mobile-hidden">
       <div className="list-row" data-aos="fade-right">
-        <div className="row-image">
+      <div className="row-image db_kyu_image1">
+          <img
+            src="/images/why_sec_img/Learn_and_Implement.jpg"
+            loading="lazy"
+            alt=""
+            className="image-650"
+          />
+        </div>
+        <div className="row-image db_kyu_image">
           <img
             src="/images/why_sec_img/1-1.jpg"
             loading="lazy"
@@ -30,7 +38,7 @@ function DebugshalaKyu() {
             className="image-650"
           />
         </div>
-        <div className="row-image">
+        <div className="row-image db_kyu_image">
           <img
             src="/images/why_sec_img/1-2.jpg"
             loading="lazy"
@@ -38,7 +46,7 @@ function DebugshalaKyu() {
             className="image-649"
           />
         </div>
-        <div className="row-image">
+        <div className="row-image db_kyu_image">
           <img
             src="/images/why_sec_img/1-3.jpg"
             loading="lazy"
@@ -63,7 +71,7 @@ function DebugshalaKyu() {
                 <div className="text-block-40">Conceptual Learning</div>
               </div>
             </div>
-            <p className="block-para">
+            <p className="block-para why-para">
               Each lecture will equip you with the skills to tackle and complete
               the tasks &amp; assignments.
             </p>
@@ -81,7 +89,7 @@ function DebugshalaKyu() {
                 <div className="text-block-40">Tasks &amp; Assignments</div>
               </div>
             </div>
-            <p className="block-para">
+            <p className="block-para why-para">
               At the beginning of each week, you'll receive a specially curated
               assignment from the trainer.
             </p>
@@ -92,6 +100,14 @@ function DebugshalaKyu() {
         </div>
       </div>
       <div className="list-row second-row" data-aos="fade-left">
+        <div className="row-image db_kyu_image1">
+          <img
+            src="/images/why_sec_img/Build_and_Contribute.jpg"
+            loading="lazy"
+            alt=""
+            className="image-650"
+          />
+        </div>
         <div className="detail-block second-detail-block detail-block-2">
           <div className="block-heading second-block-heading">
             <h2 className="box-heading third-box-heading second-box-title">
@@ -111,7 +127,7 @@ function DebugshalaKyu() {
                 <div className="text-block-40">Hands-On Application</div>
               </div>
             </div>
-            <p className="block-para">
+            <p className="block-para why-para">
               Build Projects &amp; Applications with your teammates and amplify
               your portfolio.
             </p>
@@ -132,13 +148,14 @@ function DebugshalaKyu() {
                 <div className="text-block-40">Doubt Resolution</div>
               </div>
             </div>
-            <p className="block-para">
+            <p className="block-para why-para">
               Engage in Discussions with Seniors and Trainers on topics and new
               trends.
             </p>
           </div>
         </div>
-        <div className="row-image">
+        
+        <div className="row-image db_kyu_image">
           <img
             src="/images/why_sec_img/2.png"
             loading="lazy"
@@ -148,7 +165,15 @@ function DebugshalaKyu() {
         </div>
       </div>
       <div className="list-row third-list-row" data-aos="fade-right">
-        <div className="row-image">
+        <div className="row-image db_kyu_image1">
+          <img
+            src="/images/why_sec_img/Workshop.jpg"
+            loading="lazy"
+            alt=""
+            className="image-650"
+          />
+        </div>
+        <div className="row-image db_kyu_image">
           <img
             src="/images/why_sec_img/3.png"
             loading="lazy"
@@ -175,7 +200,7 @@ function DebugshalaKyu() {
                 <div className="text-block-40">Upskill Workshops</div>
               </div>
             </div>
-            <p className="block-para">
+            <p className="block-para why-para">
               Attends Workshops &amp; Session on new technologies to keep you on
               track.
             </p>
@@ -193,7 +218,7 @@ function DebugshalaKyu() {
                 <div className="text-block-40">Internships</div>
               </div>
             </div>
-            <p className="block-para">
+            <p className="block-para why-para">
               Interact with Founders &amp; Team Leads and gain experience &amp;
               referrals by showcasing skills.
             </p>

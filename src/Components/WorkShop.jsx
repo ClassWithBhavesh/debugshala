@@ -1,20 +1,6 @@
 import React from "react";
-import { workshop_seminar } from "./DataForCarousel.js";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 function WorkShop() {
-  console.log(workshop_seminar);
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 4000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-  };
   return (
     <>
       <div id="explore-programs" className="section-gs m-bottom">
@@ -29,36 +15,7 @@ function WorkShop() {
               <div className="program_wrapper program_wrapper4">
                 <i id="left" className="fa-solid fa-angle-left" />
                 <ul className="carousel carousel4">
-                  <Slider {...settings}>
-                  {workshop_seminar.map((program, ind) => (
-                    <li key={ind} className="card card4">
-                    <div className="img card_1">
-                      <img
-                        src={program.courseImg}
-                        alt=""
-                      />
-                      <span className={`card_badge card_badge_${program.courseClass}`}>
-                        bestseller
-                      </span>
-                    </div>
-                    <div className="card_2">
-                      <h2>{program.courseName}</h2>
-                      <p>Duration : {program.courseDuration} hours</p>
-                      <p>Mode : {program.mode}</p>
-                    </div>
-                    <div className="card_3">
-                      <button className="card_btn_1 card_btn">
-                        Course Details
-                      </button>
-                      <button className="card_btn_2 card_btn">Syllabus</button>
-                    </div>
-                  </li>
-                  ))}
-                  </Slider>
-
-
-
-                  {/* <li className="card card4">
+                  <li className="card card4">
                     <div className="img card_1">
                       <img
                         src="/images/courses_banner/Chatgpt for Developers.jpg"
@@ -136,7 +93,7 @@ function WorkShop() {
                     </div>
                     <div className="card_2">
                       <h2>ChatGPT for Developers</h2>
-                      <p>Duration : 2 hours</p>
+                      <p>Duration : 3 hours</p>
                       <p>Mode : Online</p>
                     </div>
                     <div className="card_3">
@@ -189,7 +146,7 @@ function WorkShop() {
                       </button>
                       <button className="card_btn_2 card_btn">Syllabus</button>
                     </div>
-                  </li> */}
+                  </li>
                 </ul>
                 <i id="right" className="fa-solid fa-angle-right" />
               </div>

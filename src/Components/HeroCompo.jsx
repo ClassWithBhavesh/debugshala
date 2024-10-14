@@ -1,32 +1,29 @@
 import React from "react";
 import "./style.css";
 import RotatingText from "./RotatingText";
+import { Link } from "react-router-dom";
+import { IoCall } from "react-icons/io5";
+import { IoMailSharp } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IconContext } from "react-icons";
+
 
 function HeroCompo() {
   return (
     <>
       <div className="t_head snipcss-p9FT8">
-        <button
-          className="btn hidden d-block d-lg-none combo_cntct_mblbtn"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapseExample"
-          aria-expanded="true"
-          aria-controls="collapseExample"
-        >
-          Contact Us
-        </button>
         <div
           className="collapse dont-collapse-sm combo_cntctdiv"
           id="collapseExample"
         >
-          <div className="lh_head_left text-lg-left text-center col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs top-bar-head">
-            Indore Inquiry Tel:{" "}
-            <a className="topNav" href="tel:+91-8099770770">
-              +91-8099770770
-            </a>{" "}
-            &nbsp; Mail:{" "}
+          <div className="lh_head_left text-lg-left text-center col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs">
+            <a className="topNav" href="tel:+91 89823 85539">
+            <IoCall /> {" "}
+            +91 89823 85539
+            </a>
+            {" "}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a className="topNav" href="tel:+91-8767260270">
+            <IoMailSharp /> {" "}
               contact@debugshala.com{" "}
             </a>
           </div>
@@ -45,8 +42,8 @@ function HeroCompo() {
 
       <div data-w-id="71e5312f-0e2a-b6b4-7a8c-655b3c5675a1" className="navbar2">
         <div className="navbar-content-left">
-          <a
-            href="index.html"
+          <Link
+            to="/"
             aria-current="page"
             className="gs-logo w-inline-block w--current"
           >
@@ -103,12 +100,12 @@ function HeroCompo() {
                 </linearGradient>
               </defs>
             </svg>
-          </a>
+          </Link>
           {/* New Nav bar */}
+            <IconContext.Provider value={{className: "hamburger"}}>
+              <GiHamburgerMenu />
+            </IconContext.Provider>
           <div className="navBar">
-            <label htmlFor="btn" className="icon">
-              <span className="fa fa-bars" />
-            </label>
             <ul className="ulList">
               <li className="Lists">
                 <a href="#">Courses</a>
@@ -117,19 +114,19 @@ function HeroCompo() {
                     <a href="#">AI &amp; Data Science</a>
                     <ul className="ulList">
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./GenAI.html">
+                        <Link to="/Gen_AI">
                           Generative AI
-                        </a>
+                        </Link>
                       </li>
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./Data_Science.html">
+                        <Link to="/Data_Science">
                           Data Science
-                        </a>
+                        </Link>
                       </li>
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./Data_Analytics.html">
+                        <Link to="/Data_Analyst">
                           Data Analytics
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>
@@ -137,24 +134,24 @@ function HeroCompo() {
                     <a href="#">Web Development</a>
                     <ul className="ulList">
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./MERN.html">
+                        <Link to="/MERN_Stack_Web_Dev">
                           MERN Stack
-                        </a>
+                        </Link>
                       </li>
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./Next.html">
+                        <Link to="/Next_Web_Dev">
                           Next Js
-                        </a>
+                        </Link>
                       </li>
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./React.html">
+                        <Link to="/React_Web_Dev">
                           React Js
-                        </a>
+                        </Link>
                       </li>
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./Java.html">
+                        <Link to="/Java_Web_Dev">
                           Java Full Stack
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>
@@ -165,48 +162,48 @@ function HeroCompo() {
                     <a href="#">Upskill Courses </a>
                     <ul className="ulList">
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./UI-UX.html">
+                        <Link to="/UI_UX">
                           Ui-UX Developer
-                        </a>
+                        </Link>
                       </li>
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./AI_Marketer.html">
+                        <Link to="/AI_Marketer">
                           AI Marketer
-                        </a>
+                        </Link>
                       </li>
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./MS_Office.html">
+                        <Link to="/MS_Office">
                           MS Office for DA
-                        </a>
+                        </Link>
                       </li>
                       <li className="Lists nav-Bar-bg">
-                        <a target="_blank" href="./ChatGPT_for_developers.html">
+                        <Link to="/ChatGPT_for_developers">
                           ChatGPT for Dev
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li className="Lists">
-                <a href="#">Hire From Us</a>
+                <a href="https://thedatacareer.com" target="_blank">Hire From Us</a>
               </li>
               <li className="Lists">
-                <a href="#">Our Placements</a>
+                <Link to="/Placed_Candidates">Our Placements</Link>
               </li>
               <li className="Lists">
-                <a href="#">Success Stories</a>
+                <Link to="/About">About Us</Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="div-block-789">
-          <a
-            href="https://api.DebugShala.io/login"
+          <Link
+            to="/Contact"
             className="nav-link2 is-button"
           >
-            Book A Free Demo
-          </a>
+            Contact Us
+          </Link>
         </div>
       </div>
 
@@ -234,15 +231,6 @@ function HeroCompo() {
                   <p className="become_para">Become a</p>
                   <br />
                   <RotatingText />
-                  {/* <p className="become_para">
-                    <span className="word w-1">Ai_Marketer</span>
-                    <span className="word w-2">Data_Scientist</span>
-                    <span className="word w-3">ML_Engineer</span>
-                    <span className="word w-4">Data_Analyst</span>
-                    <span className="word w-5">MERN_Developer</span>
-                    <span className="word w-6">Java_Developer</span>
-                    <span className="word w-7">UI-UX_Developer</span>
-                  </p> */}
                 </h1>
                 <form
                   action=""
@@ -283,9 +271,7 @@ function HeroCompo() {
                       <option value="reactjs">React.js</option>
                       <option value="datascience">Data Science</option>
                       <option value="dataanalytics">Data Analytics</option>
-                      <option value="javafullstack">
-                        Java Full Stack Development
-                      </option>
+                      <option value="javafullstack">Java Full Stack Development</option>
                       <option value="aiengineering">AI Engineering</option>
                       <option value="aimarketer">AI Marketer</option>
                     </select>
@@ -303,7 +289,7 @@ function HeroCompo() {
           <h1 className="scroller_head">Our Recent Placements</h1>
           <div className="box box1">
             <div className="std_img">
-              <img src="/images/placed_students/1.jpg" alt="" />
+              <img src="/images/placed_students/Sanidhya_Jain.jpg" alt="" />
             </div>
             <div className="std_des">
               <h3>Sanidhya Jain</h3>
@@ -311,14 +297,14 @@ function HeroCompo() {
             </div>
             <div className="std_cpny">
               <img
-                src="/images/placed_students/placed_students_company_logo/1.png"
+                src="/images/placed_students/placed_students_company_logo/Bitcot.png"
                 alt=""
               />
             </div>
           </div>
           <div className="box box2">
             <div className="std_img">
-              <img src="/images/placed_students/2.jpg" alt="" />
+              <img src="/images/placed_students/Siddharth_Jain.jpg" alt="" />
             </div>
             <div className="std_des">
               <h3>Siddharth Jain</h3>
@@ -326,14 +312,14 @@ function HeroCompo() {
             </div>
             <div className="std_cpny">
               <img
-                src="/images/placed_students/placed_students_company_logo/2.png"
+                src="/images/placed_students/placed_students_company_logo/Bitsquad.png"
                 alt=""
               />
             </div>
           </div>
           <div className="box box3">
             <div className="std_img">
-              <img src="/images/placed_students/3.jpg" alt="" />
+              <img src="/images/placed_students/Amit_Saini.jpg" alt="" />
             </div>
             <div className="std_des">
               <h3>Amit Saini</h3>
@@ -341,14 +327,14 @@ function HeroCompo() {
             </div>
             <div className="std_cpny">
               <img
-                src="/images/placed_students/placed_students_company_logo/3.png"
+                src="/images/placed_students/placed_students_company_logo/ESP_Softech.png"
                 alt=""
               />
             </div>
           </div>
           <div className="box box4">
             <div className="std_img">
-              <img src="/images/placed_students/4.jpg" alt="" />
+              <img src="/images/placed_students/Ajay_Singh_Parihar.jpg" alt="" />
             </div>
             <div className="std_des">
               <h3>Ajay Singh Parihar</h3>
@@ -356,14 +342,14 @@ function HeroCompo() {
             </div>
             <div className="std_cpny">
               <img
-                src="/images/placed_students/placed_students_company_logo/5.png"
+                src="/images/placed_students/placed_students_company_logo/Aimleap.png"
                 alt=""
               />
             </div>
           </div>
           <div className="box box5">
             <div className="std_img">
-              <img src="/images/placed_students/5.jpg" alt="" />
+              <img src="/images/placed_students/Yash_Palod.jpg" alt="" />
             </div>
             <div className="std_des">
               <h3>Yash Palod</h3>
@@ -371,14 +357,14 @@ function HeroCompo() {
             </div>
             <div className="std_cpny">
               <img
-                src="/images/placed_students/placed_students_company_logo/4.png"
+                src="/images/placed_students/placed_students_company_logo/Avalon.png"
                 alt=""
               />
             </div>
           </div>
           <div className="box box6">
             <div className="std_img">
-              <img src="/images/placed_students/6.jpg" alt="" />
+              <img src="/images/placed_students/Anita_Singh.jpg" alt="" />
             </div>
             <div className="std_des">
               <h3>Anita Singh</h3>
@@ -386,14 +372,14 @@ function HeroCompo() {
             </div>
             <div className="std_cpny">
               <img
-                src="/images/placed_students/placed_students_company_logo/7.png"
+                src="/images/placed_students/placed_students_company_logo/ORAI.png"
                 alt=""
               />
             </div>
           </div>
           <div className="box box7">
             <div className="std_img">
-              <img src="/images/placed_students/7.jpg" alt="" />
+              <img src="/images/placed_students/Aryan_Gupta.jpg" alt="" />
             </div>
             <div className="std_des">
               <h3>Aryan Gupta</h3>
@@ -401,14 +387,14 @@ function HeroCompo() {
             </div>
             <div className="std_cpny">
               <img
-                src="/images/placed_students/placed_students_company_logo/6.png"
+                src="/images/placed_students/placed_students_company_logo/Nine_A.png"
                 alt=""
               />
             </div>
           </div>
           <div className="box box8">
             <div className="std_img">
-              <img src="/images/placed_students/8.jpg" alt="" />
+              <img src="/images/placed_students/Shravan_Kanade.jpg" alt="" />
             </div>
             <div className="std_des">
               <h3>Shravan Kanade</h3>
@@ -416,7 +402,142 @@ function HeroCompo() {
             </div>
             <div className="std_cpny">
               <img
-                src="/images/placed_students/placed_students_company_logo/8.png"
+                src="/images/placed_students/placed_students_company_logo/DigiMantra.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="box box9">
+            <div className="std_img">
+              <img src="/images/placed_students/Ashwini_Bigha.jpg" alt="" />
+            </div>
+            <div className="std_des">
+              <h3>Ashwini Bigha</h3>
+              <h4>Frontend Developer</h4>
+            </div>
+            <div className="std_cpny">
+              <img
+                src="/images/placed_students/placed_students_company_logo/Nine_A.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="box box10">
+            <div className="std_img">
+              <img src="/images/placed_students/Chetan_Dhakad.jpg" alt="" />
+            </div>
+            <div className="std_des">
+              <h3>Chetan Dhakad</h3>
+              <h4>Advance Excel Associate</h4>
+            </div>
+            <div className="std_cpny">
+              <img
+                src="/images/placed_students/placed_students_company_logo/Innovquant.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="box box11">
+            <div className="std_img">
+              <img src="/images/placed_students/Rajat_Baghel.jpg" alt="" />
+            </div>
+            <div className="std_des">
+              <h3>Rajat Baghel</h3>
+              <h4>Software Developer Trainee</h4>
+            </div>
+            <div className="std_cpny">
+              <img
+                src="/images/placed_students/placed_students_company_logo/Throughout_Technologies.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="box box12">
+            <div className="std_img">
+              <img src="/images/placed_students/Surendra_Gurjar.jpg" alt="" />
+            </div>
+            <div className="std_des">
+              <h3>Surendra Gurjar</h3>
+              <h4>Software Engineer Trainee</h4>
+            </div>
+            <div className="std_cpny">
+              <img
+                src="/images/placed_students/placed_students_company_logo/Cubexo.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="box box13">
+            <div className="std_img">
+              <img src="/images/placed_students/Yatendra_Gurjar.jpg" alt="" />
+            </div>
+            <div className="std_des">
+              <h3>Yatendra Gurjar</h3>
+              <h4>Frontend Developer</h4>
+            </div>
+            <div className="std_cpny">
+              <img
+                src="/images/placed_students/placed_students_company_logo/Nine_A.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="box box14">
+            <div className="std_img">
+              <img src="/images/placed_students/Vivek_Kushwah.jpg" alt="" />
+            </div>
+            <div className="std_des">
+              <h3>Vivek Kushwah</h3>
+              <h4>Data Analyst Trainee</h4>
+            </div>
+            <div className="std_cpny">
+              <img
+                src="/images/placed_students/placed_students_company_logo/Aimleap.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="box box15">
+            <div className="std_img">
+              <img src="/images/placed_students/Suruchi_Sahu.jpg" alt="" />
+            </div>
+            <div className="std_des">
+              <h3>Suruchi Sahu</h3>
+              <h4>Assistant System Engineer</h4>
+            </div>
+            <div className="std_cpny">
+              <img
+                src="/images/placed_students/placed_students_company_logo/TCS.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="box box16">
+            <div className="std_img">
+              <img src="/images/placed_students/Anuj_Mehta.jpg" alt="" />
+            </div>
+            <div className="std_des">
+              <h3>Anuj Mehta</h3>
+              <h4>Jr. Data Science Engineer</h4>
+            </div>
+            <div className="std_cpny">
+              <img
+                src="/images/placed_students/placed_students_company_logo/Engineer_Master.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="box box17">
+            <div className="std_img">
+              <img src="/images/placed_students/Aniket_Jhawar.jpg" alt="" />
+            </div>
+            <div className="std_des">
+              <h3>Aniket Jhawar</h3>
+              <h4>Angular Developer</h4>
+            </div>
+            <div className="std_cpny">
+              <img
+                src="/images/placed_students/placed_students_company_logo/TeamLease.png"
                 alt=""
               />
             </div>

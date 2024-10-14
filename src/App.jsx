@@ -1,36 +1,82 @@
 import React from "react";
-import HeroCompo from "./Components/HeroCompo";
-import CTA from "./Components/CTA";
-import ExploreCourse from "./Components/ExploreCourse";
-import CTA2 from "./Components/CTA2";
-import DebugshalaKyu from "./Components/DebugshalaKyu";
-import CourseDetails from "./Components/CourseDetails";
-import CTA3 from "./Components/CTA3";
-import CommunitySec from "./Components/CommunitySec";
-import CTA4 from "./Components/CTA4";
-import Footer from "./Components/Footer";
-import FAQ from "./Components/FAQ";
-import CTA5 from "./Components/CTA5";
-// import Navbar from "./Components/Navbar";
-import WorkShop from "./Components/WorkShop";
+import Landing from "./Components/Landing";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AiMarketor from "./Components/Nested_Compo/AiMarketor";
+import DataAnalyst from "./Components/Nested_Compo/DataAnalyst";
+import DataScience from "./Components/Nested_Compo/DataScience";
+import GenAI from "./Components/Nested_Compo/GenAI";
+import Java from "./Components/Nested_Compo/Java";
+import MachineLearning from "./Components/Nested_Compo/MachineLearning";
+import MERN from "./Components/Nested_Compo/MERN";
+import Next from "./Components/Nested_Compo/Next";
+import ReactCompo from "./Components/Nested_Compo/ReactCompo";
+import UiUx from "./Components/Nested_Compo/UiUx";
+import PlacedCandidates from "./Components/PlacedCandidates";
+import About from "./Components/About";
+import ContactUs from "./Components/ContactUs";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Landing />
+    },
+    {
+      path: "About",
+      element: <About />
+    },
+    {
+      path: "Contact",
+      element: <ContactUs />
+    },
+    {
+      path: "/Placed_Candidates",
+      element: <PlacedCandidates />
+    },
+    {
+      path: "/AI_Marketer",
+      element: <AiMarketor />
+    },
+    {
+      path: "/Data_Analyst",
+      element: <DataAnalyst />
+    },
+    {
+      path: "/Data_Science",
+      element: <DataScience />
+    },
+    {
+      path: "/Gen_AI",
+      element: <GenAI />
+    },
+    {
+      path: "/Java_Web_Dev",
+      element: <Java />
+    },
+    {
+      path: "/Machine_Learning",
+      element: <MachineLearning />
+    },
+    {
+      path: "/MERN_Stack_Web_Dev",
+      element: <MERN />
+    },
+    {
+      path: "/Next_Web_Dev",
+      element: <Next />
+    },
+    {
+      path: "/React_Web_Dev",
+      element: <ReactCompo />
+    },
+    {
+      path: "/UI_UX",
+      element: <UiUx />
+    }
+  ]);
   return (
     <>
-      {/* <Navbar/> */}
-      <HeroCompo />
-      <CTA />
-      <ExploreCourse />
-      <CTA2 />
-      <DebugshalaKyu />
-      <CourseDetails />
-      <CTA3 />
-      <CommunitySec />
-      <CTA4 />
-      <WorkShop />
-      <FAQ />
-      <CTA5 />
-      <Footer />
+      <RouterProvider router={router}/>
     </>
   );
 }
