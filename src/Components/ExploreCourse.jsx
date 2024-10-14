@@ -2,120 +2,6 @@ import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 
 function ExploreCourse() {
-  const carouselRef = useRef(null);
-  const wrapperRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const [timeoutId, setTimeoutId] = useState(null);
-  const firstCardWidth = useRef(0);
-  const cardPerView = useRef(0);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    const wrapper = wrapperRef.current;
-
-    const cardWidth = carousel.querySelector(".card1").offsetWidth;
-    firstCardWidth.current = cardWidth;
-
-    const childrenArray = Array.from(carousel.children);
-
-    cardPerView.current = Math.round(carousel.offsetWidth / cardWidth);
-
-    // Add duplicate cards to create infinite scrolling
-    childrenArray
-      .slice(-cardPerView.current)
-      .reverse()
-      .forEach((card) => {
-        carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-      });
-
-    childrenArray.slice(0, cardPerView.current).forEach((card) => {
-      carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-    });
-
-    // Set the carousel scroll position
-    carousel.classList.add("no-transition");
-    carousel.scrollLeft = carousel.offsetWidth;
-    carousel.classList.remove("no-transition");
-
-    // Clean up the effect on unmount
-    return () => clearTimeout(timeoutId);
-  }, []);
-
-  const handleArrowClick = (direction) => {
-    const carousel = carouselRef.current;
-    const scrollAmount =
-      direction === "left" ? -firstCardWidth.current : firstCardWidth.current;
-    carousel.scrollLeft += scrollAmount;
-  };
-
-  const dragStart = (e) => {
-    const carousel = carouselRef.current;
-    setIsDragging(true);
-    carousel.classList.add("dragging");
-    setStartX(e.pageX);
-    setScrollLeft(carousel.scrollLeft);
-  };
-
-  const dragging = (e) => {
-    if (!isDragging) return;
-    const carousel = carouselRef.current;
-    const x = e.pageX - startX;
-    carousel.scrollLeft = scrollLeft - x;
-  };
-
-  const dragStop = () => {
-    setIsDragging(false);
-    carouselRef.current.classList.remove("dragging");
-  };
-
-  const infiniteScroll = () => {
-    const carousel = carouselRef.current;
-
-    if (carousel.scrollLeft === 0) {
-      carousel.classList.add("no-transition");
-      carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
-      carousel.classList.remove("no-transition");
-    } else if (
-      Math.ceil(carousel.scrollLeft) ===
-      carousel.scrollWidth - carousel.offsetWidth
-    ) {
-      carousel.classList.add("no-transition");
-      carousel.scrollLeft = carousel.offsetWidth;
-      carousel.classList.remove("no-transition");
-    }
-
-    // Autoplay handling
-    clearTimeout(timeoutId);
-    if (!wrapperRef.current.matches(":hover")) autoPlay();
-  };
-
-  const autoPlay = () => {
-    if (window.innerWidth < 800) return; // Disable autoplay on small screens
-    const id = setTimeout(() => {
-      carouselRef.current.scrollLeft += firstCardWidth.current;
-    }, 2500);
-    setTimeoutId(id);
-  };
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    const wrapper = wrapperRef.current;
-
-    // carousel.addEventListener("scroll", infiniteScroll);
-    // wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-    // wrapper.addEventListener("mouseleave", autoPlay);
-
-    // Autoplay start
-    autoPlay();
-
-    return () => {
-    //   carousel.removeEventListener("scroll", infiniteScroll);
-    //   wrapper.removeEventListener("mouseenter", () => clearTimeout(timeoutId));
-    //   wrapper.removeEventListener("mouseleave", autoPlay);
-    };
-  }, [timeoutId]);
 
   return (
     <>
@@ -144,11 +30,6 @@ function ExploreCourse() {
                 />
                 <ul
                   className="carousel carousel1"
-                  ref={carouselRef}
-                  onMouseDown={dragStart}
-                  onMouseMove={dragging}
-                  onMouseUp={dragStop}
-                  onMouseLeave={dragStop}
                 >
                   <li className="card card1">
                     <a target="_blank" href="./GenAI.html">
