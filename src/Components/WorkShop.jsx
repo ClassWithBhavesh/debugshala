@@ -1,4 +1,6 @@
 import React from "react";
+import { workshop_seminar } from "./DataForCarousel";
+import { Link } from "react-router-dom";
 
 function WorkShop() {
   return (
@@ -15,138 +17,49 @@ function WorkShop() {
               <div className="program_wrapper program_wrapper4">
                 <i id="left" className="fa-solid fa-angle-left" />
                 <ul className="carousel carousel4">
-                  <li className="card card4">
-                    <div className="img card_1">
-                      <img
-                        src="/images/courses_banner/Chatgpt for Developers.jpg"
-                        alt=""
-                      />
-                      <span className="card_badge card_badge_1">
-                        bestseller
-                      </span>
-                    </div>
-                    <div className="card_2">
-                      <h2>ChatGPT for Developers</h2>
-                      <p>Duration : 3 hours</p>
-                      <p>Mode : Online</p>
-                    </div>
-                    <div className="card_3">
-                      <button className="card_btn_1 card_btn">
-                        Course Details
-                      </button>
-                      <button className="card_btn_2 card_btn">Syllabus</button>
-                    </div>
-                  </li>
-                  <li className="card card4">
-                    <div className="img card_1">
-                      <img
-                        src="/images/courses_banner/Linkedin_Outreach.jpg"
-                        alt=""
-                      />
-                      <span className="card_badge card_badge_2">
-                        bestseller
-                      </span>
-                    </div>
-                    <div className="card_2">
-                      <h2>Linkedin Outreach</h2>
-                      <p>Duration : 2 hours</p>
-                      <p>Mode : Online</p>
-                    </div>
-                    <div className="card_3">
-                      <button className="card_btn_1 card_btn">
-                        Course Details
-                      </button>
-                      <button className="card_btn_2 card_btn">Syllabus</button>
-                    </div>
-                  </li>
-                  <li className="card card4">
-                    <div className="img card_1">
-                      <img
-                        src="/images/courses_banner/MS Office for Data Analytics.jpg"
-                        alt=""
-                      />
-                      <span className="card_badge card_badge_1">
-                        bestseller
-                      </span>
-                    </div>
-                    <div className="card_2">
-                      <h2>MS Office for DA</h2>
-                      <p>Duration : 2 hours</p>
-                      <p>Mode : Online</p>
-                    </div>
-                    <div className="card_3">
-                      <button className="card_btn_1 card_btn">
-                        Course Details
-                      </button>
-                      <button className="card_btn_2 card_btn">Syllabus</button>
-                    </div>
-                  </li>
-                  <li className="card card4">
-                    <div className="img card_1">
-                      <img
-                        src="/images/courses_banner/Chatgpt for Developers.jpg"
-                        alt=""
-                      />
-                      <span className="card_badge card_badge_1">
-                        bestseller
-                      </span>
-                    </div>
-                    <div className="card_2">
-                      <h2>ChatGPT for Developers</h2>
-                      <p>Duration : 3 hours</p>
-                      <p>Mode : Online</p>
-                    </div>
-                    <div className="card_3">
-                      <button className="card_btn_1 card_btn">
-                        Course Details
-                      </button>
-                      <button className="card_btn_2 card_btn">Syllabus</button>
-                    </div>
-                  </li>
-                  <li className="card card4">
-                    <div className="img card_1">
-                      <img
-                        src="/images/courses_banner/Linkedin_Outreach.jpg"
-                        alt=""
-                      />
-                      <span className="card_badge card_badge_2">
-                        bestseller
-                      </span>
-                    </div>
-                    <div className="card_2">
-                      <h2>Linkedin Outreach</h2>
-                      <p>Duration : 2 hours</p>
-                      <p>Mode : Online</p>
-                    </div>
-                    <div className="card_3">
-                      <button className="card_btn_1 card_btn">
-                        Course Details
-                      </button>
-                      <button className="card_btn_2 card_btn">Syllabus</button>
-                    </div>
-                  </li>
-                  <li className="card card4">
-                    <div className="img card_1">
-                      <img
-                        src="/images/courses_banner/MS Office for Data Analytics.jpg"
-                        alt=""
-                      />
-                      <span className="card_badge card_badge_1">
-                        bestseller
-                      </span>
-                    </div>
-                    <div className="card_2">
-                      <h2>MS Office for DA</h2>
-                      <p>Duration : 2 hours</p>
-                      <p>Mode : Online</p>
-                    </div>
-                    <div className="card_3">
-                      <button className="card_btn_1 card_btn">
-                        Course Details
-                      </button>
-                      <button className="card_btn_2 card_btn">Syllabus</button>
-                    </div>
-                  </li>
+                  {workshop_seminar.map((card, ind) => {
+                    return (
+                      <li key={ind} className="card card1">
+                        <div className="img card_1">
+                          <img
+                            src={card.courseImg}
+                            alt="img"
+                            draggable="false"
+                          />
+                          <span
+                            className={`card_badge card_badge_${card.courseClass}`}
+                          >
+                            bestseller
+                          </span>
+                        </div>
+                        <div className="card_2">
+                          <h2>{card.courseName}</h2>
+                          <p>Duration : {card.courseDuration} Months</p>
+                          <p>Assistance : {card.courseAssistance}</p>
+                        </div>
+                        <div className="card_3">
+                          <Link
+                            to={card.courseDetails}
+                            className="course_details_btn"
+                            target="_blank"
+                          >
+                            <button className="card_btn_1 card_btn">
+                              Course Details
+                            </button>
+                          </Link>
+                          <Link
+                            to={card.courseDetails}
+                            className="course_details_btn"
+                            target="_blank"
+                          >
+                            <button className="card_btn_2 card_btn">
+                              Syllabus
+                            </button>
+                          </Link>
+                        </div>
+                      </li>
+                    );
+                  })}
                 </ul>
                 <i id="right" className="fa-solid fa-angle-right" />
               </div>
