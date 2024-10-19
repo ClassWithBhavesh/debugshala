@@ -6,9 +6,9 @@ import {
   UpSkill_Course_Data,
 } from "./DataForCarousel";
 // import Slider from "react-slick";
-import AI_MLCarousel from "./Carousels/AI_MLCarousel";
-import WebDevCarousel from "./Carousels/WebDevCarousel";
-import UpSkillCarousel from "./Carousels/UpSkillCarousel";
+// import AI_MLCarousel from "./Carousels/AI_MLCarousel";
+// import WebDevCarousel from "./Carousels/WebDevCarousel";
+// import UpSkillCarousel from "./Carousels/UpSkillCarousel";
 
 function ExploreCourse() {
   return (

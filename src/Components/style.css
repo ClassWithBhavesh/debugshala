@@ -5780,6 +5780,7 @@ margin-right: auto;
   cursor: pointer;
   transition: all 1s;
   left: 25%;
+  z-index: 2;
 }
 
 .cover-image{
@@ -5874,11 +5875,27 @@ margin-right: auto;
   transform: scaleX(0);
   transition: all 1s 1s;
   transform-origin: left;
+  position: relative;
 }
+
 
 .Founder_Sec:hover .About_Founder{
   transform-origin: left;
   transform: scaleX(1);
+}
+
+.about_founder_wrapper{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+}
+
+.Founder_Sec:hover .about_founder_wrapper{
+  z-index: 0;
+  opacity: 0;
 }
 
 .Founder_Sec:hover .founder_card{
@@ -5892,6 +5909,7 @@ margin-right: auto;
 
 .Founder_Sec:hover .about_para{
   opacity: 1;
+  z-index: 1;
 }
 
 
@@ -6125,6 +6143,25 @@ margin-right: auto;
   height: 100%;
 }
 
+.error_msg {
+  color: rgb(255, 255, 255);
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.error {
+  border-color: rgb(255, 52, 52);
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
 /* Add this to your existing CSS file */
 
 @keyframes popUpImages {
@@ -6243,7 +6280,7 @@ margin-right: auto;
   padding: 5px 7px;
   border-radius: 5px;
   margin-top: 5px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   color: #fff;
 }
 
@@ -6281,9 +6318,57 @@ margin-right: auto;
 }
 
 .error_msg {
-  color: var(--crimson);
+  color: #fff;
   border-radius: 10rem;
-  margin-top: 0.75rem;
-  padding: 0.75rem;
+  /* margin-top: 0.75rem; */
+  /* padding: 0.75rem; */
 }
 
+/* Success message animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.form_success_sec, .form_error_sec {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  display: none;
+}
+
+.form_success_sec {
+  background-color: green;
+}
+
+.form_error_sec {
+  background-color: red;
+}
+
+/* Animation styles */
+.showMessage {
+  display: block;
+  animation: slideIn 0.5s ease forwards, slideOut 0.5s ease 2.5s forwards;
+}

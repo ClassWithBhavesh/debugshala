@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 // import CTA2 from "./CTA2";
 import Footer from "./Footer";
+import Mentor from "./Mentor_Compo/Mentor";
 
 function About() {
   return (
@@ -167,6 +168,7 @@ function About() {
           />
         </div>
         <div className="About_Founder">
+          <div className="about_founder_wrapper"></div>
           <p className="about_para">
             Our CEO is a versatile professional whose expertise spans across
             multiple domains. As a seasoned Data Scientist, he has not only
@@ -179,6 +181,14 @@ function About() {
             of Debugshala, where his strategic insights and innovative
             approaches continue to drive the company's success.
           </p>
+        </div>
+      </div>
+      <div className="mentor-compo">
+        <h1 className="mentor-heading">Meet Our Mentors</h1>
+        <div className="mentor-sec">
+          <Mentor mentorName="Sapan_Singh" mentorSub="Flutter_Trainer" mentorImage="/images/About_Images/Mentor_Images/sapan.jpg" mentorSubImage="/images/About_Images/Mentor_Sub_Images/Flutter.jpg" />
+          <Mentor mentorName="Albin_Xavier" mentorSub="Gen_AI_Trainer" mentorImage="/images/About_Images/Mentor_Images/albin.jpg" mentorSubImage="/images/About_Images/Mentor_Sub_Images/Python.jpg" />
+          <Mentor mentorName="Banti_Singh" mentorSub="Java_Trainer" mentorImage="/images/About_Images/Mentor_Images/banti.jpg" mentorSubImage="/images/About_Images/Mentor_Sub_Images/Blockchain.jpg" />
         </div>
       </div>
       <Footer />
